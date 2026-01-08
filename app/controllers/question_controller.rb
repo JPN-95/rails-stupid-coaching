@@ -5,7 +5,7 @@ class QuestionController < ApplicationController
 
   def answer
     question = params[:question].downcase
-    if question.include?("going to work") && question.exclude?("not")
+    if question.include?("going to work") && ! question.include?("not")
       @answer = "Great!"
     elsif question[-1] == "?"
       @answer = "Silly question, get dressed and go to work!"
